@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b0b0c" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Gym" />
+    <title>Gym</title>
+
+    <!-- Relative paths: the app is served under /gym/ on GitHub Pages. -->
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png" />
+
+    
+<script type="module">
+import init, * as bindings from '/gym/ui_leptos-5a88439177b6fff3.js';
+const wasm = await init({ module_or_path: '/gym/ui_leptos-b2f740733c199cd9_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script>
+    <link rel="stylesheet" href="/gym/base-2c7d3097a7e4e03a.css" integrity="sha384-AMbrMHqFp3ufHZyDbPzIpfEpeeXzhibw/xmW8T37r+mDRE2e1+/A477sYBG0dNW/"/>
+    <link rel="stylesheet" href="/gym/style-aa201b0aeaace84f.css" integrity="sha384-RuVgvV5C1nKI6+4DYXgLzwIMR5fZVZBm8TFRhafZWcOW9RPZ9DOcJtXPsszTjPV5"/>
+    <link rel="stylesheet" href="/gym/style-3348abb28d73cb98.css" integrity="sha384-3MsZNKhY0fUKaHOxW+vHyK1mW8hZvELPe9wykWY0lJZS3yxhHsh/VES3Wy970L53"/>
+    <link rel="stylesheet" href="/gym/style-21827311e3b4ae74.css" integrity="sha384-FV3Mp1Fd3xZ7VfbctG88a7xDgw0T/7lLbeExJK1Mam11+DKJwJ4cW/ZXLj6z4+Nl"/>
+    <link rel="stylesheet" href="/gym/style-fc00f31fb184bd79.css" integrity="sha384-J+sKxmykIj8jxRQd60KB9ECpGMSJ5QmUrXiHTS3OmHM/UoUGQcaLHEMAI6+Y7G7d"/>
+    <link rel="stylesheet" href="/gym/style-8b1818949edf7e37.css" integrity="sha384-rW+8UuWhVwfvwSHCVVLYYSA1b1LlBx2NS0BlM3ooZyEuwxZNhito4jYTGAWnE9vA"/>
+    <link rel="stylesheet" href="/gym/style-24769e184c7b06fd.css" integrity="sha384-eFBQg98Xs6vdB7K8ehnMA2QoWm+vdxvWn6h2OBCHZO7ISOBM2tzI3+cg4UHoGRj5"/>
+    <link rel="stylesheet" href="/gym/style-1617e1a12f33cefc.css" integrity="sha384-2N0NClpHw+Mr2okdnGR5rOBC2PDAwahoqHAi0Sfklq+jN0FQ/jBWcm7N1F8RHTa2"/>
+
+    
+    
+    
+    
+  <link rel="modulepreload" href="/gym/ui_leptos-5a88439177b6fff3.js" crossorigin="anonymous" integrity="sha384-VaDt/yZO8GdTlwPUdgL4XW6Ejd1NKc5bHSjMHKjAAHr9AgmMSWryl9XXIOyJHDx4"><link rel="preload" href="/gym/ui_leptos-b2f740733c199cd9_bg.wasm" crossorigin="anonymous" integrity="sha384-NSvXnfcx1j6hKv7iGO8/BaVRAke0zgnXfCvxQ1AUQ3emlgiIyyUAmldnnG+qu7BO" as="fetch" type="application/wasm"></head>
+  <body></body>
+</html>

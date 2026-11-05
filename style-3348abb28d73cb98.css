@@ -1,0 +1,125 @@
+
+.run-session { padding-bottom: calc(var(--button-height) + var(--space-6) + env(safe-area-inset-bottom)); }
+
+.run-session__empty, .run-session__gone { display: flex; flex-direction: column; gap: var(--space-4); }
+
+/* Giant rest timer */
+
+.rest-hero {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  border: 1px solid color-mix(in srgb, var(--rest) 25%, transparent);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--rest) 16%, transparent), color-mix(in srgb, var(--rest) 4%, transparent));
+}
+.rest-hero__title { color: var(--rest); }
+.rest-hero__label { font-size: var(--text-sm); color: var(--text-2); }
+.rest-hero__digits { font-family: var(--font-display); font-weight: 700; font-size: var(--digits-lg); line-height: 0.9; color: var(--rest); }
+.rest-hero--session { border-color: var(--surface-3); background: var(--surface); }
+.rest-hero--session .rest-hero__digits { color: var(--text); font-size: var(--digits-md); }
+
+/* Exercise view */
+
+.exercise { display: flex; flex-direction: column; gap: var(--space-4); }
+.exercise__header { display: flex; flex-direction: column; gap: var(--space-1); }
+.exercise__name { font-family: var(--font-display); font-weight: 700; font-size: var(--title-sm); line-height: 1.02; text-transform: uppercase; }
+.exercise__settings { align-self: flex-start; min-height: var(--touch-min); font-size: var(--text-sm); color: var(--text-2); text-align: left; }
+.exercise__last { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-2); font-size: var(--text-sm); }
+
+/* Set rows */
+
+.sets { display: flex; flex-direction: column; gap: var(--space-1); }
+.sets__head, .set {
+  display: grid; grid-template-columns: 34px 1fr auto 40px; align-items: center; gap: var(--space-2);
+  padding: 0 var(--space-3);
+}
+.sets__head span { font-family: var(--font-display); font-weight: 600; font-size: var(--text-xs); letter-spacing: 1.2px; text-transform: uppercase; color: var(--text-3); }
+.set { width: 100%; min-height: 52px; border-radius: var(--radius-sm); }
+.set__number { font-family: var(--font-display); font-weight: 700; font-size: var(--digits-xs); color: var(--text-3); }
+.set__previous { font-size: var(--text-sm); color: var(--text-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.set__value { font-family: var(--font-display); font-weight: 700; font-size: var(--digits-sm); text-align: right; white-space: nowrap; }
+.set__check {
+  width: 36px; height: 36px; justify-self: end;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: var(--accent); color: var(--on-accent); font-weight: 700;
+}
+.set--done { background: color-mix(in srgb, var(--accent) 7%, transparent); &:active { background: var(--surface-2); } }
+.set--warmup .set__number { color: var(--text-2); }
+.set--warmup .set__value { color: var(--text-2); }
+.set--upcoming { opacity: 0.7; }
+
+.set-actions { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); padding: var(--space-1) 0 var(--space-2); }
+
+/* Current set: inline editor */
+
+.set-current {
+  display: flex; flex-direction: column; gap: var(--space-3);
+  padding: var(--space-2) var(--space-3) var(--space-3);
+  border: 2px solid var(--accent); border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+.set-current .set { padding: 0; min-height: 32px; }
+
+
+/* Handle and exercise drawer */
+
+.run-session__drawer-handle {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
+  display: flex; flex-direction: column; align-items: center; gap: var(--space-2);
+  padding: var(--space-2) var(--space-4) calc(var(--space-4) + env(safe-area-inset-bottom));
+  border-radius: var(--radius-sheet) var(--radius-sheet) 0 0;
+  background: var(--surface);
+  box-shadow: var(--shadow-sheet);
+  font-weight: 600;
+}
+
+/* As a flex item, `.list` (overflow: hidden) gets squeezed to fit the sheet and clips its last rows:
+   the list scrolls on its own instead, keeping the actions below it visible. */
+.drawer__list { overflow-y: auto; overscroll-behavior: contain; }
+.drawer__entry { display: flex; align-items: center; gap: var(--space-2); padding-right: var(--space-2); }
+.drawer__swipe { flex: 1; min-width: 0; }
+.drawer__select { background: var(--surface); display: flex; align-items: center; gap: var(--space-3); min-height: 64px; padding: var(--space-2) var(--space-4); }
+.drawer__entry-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.drawer__entry-name { font-weight: 600; }
+.drawer__actions { display: flex; flex-direction: column; gap: var(--space-2); margin-top: var(--space-2); }
+
+.status {
+  width: 30px; height: 30px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; font-weight: 700;
+}
+.status--done { background: var(--accent); color: var(--on-accent); }
+.status--current { background: var(--rest); color: var(--bg); }
+.status--todo { border: 2px solid var(--surface-3); }
+
+/* End of session */
+
+.recap__eyebrow { color: var(--accent); padding-top: var(--space-4); }
+.recap__week { color: var(--accent); font-weight: 600; }
+.recap__records-title { padding: var(--space-3) var(--space-4) 0; }
+.recap__record { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3) var(--space-4); }
+.recap__record-text { display: flex; flex-direction: column; gap: 2px; }
+
+/* Record celebration after a set */
+
+.record-banner {
+  display: flex; align-items: center; gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--record);
+  background: color-mix(in srgb, var(--record) 12%, transparent);
+  animation: record-pop 0.35s ease-out;
+}
+.record-banner__text { display: flex; flex-direction: column; gap: 2px; font-size: var(--text-sm); }
+.record-banner__title { font-family: var(--font-display); font-weight: 700; font-size: var(--text-lg); text-transform: uppercase; color: var(--record); }
+@keyframes record-pop { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+/* Set timer */
+
+.set-timer { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); }
+.set-timer__digits { flex: 1; font-family: var(--font-display); font-weight: 700; font-size: var(--digits-md); color: var(--accent); }
+
+.sets__hint { padding: var(--space-2) var(--space-1) 0; font-size: var(--text-xs); color: var(--text-3); }
+.recap__exercise-name { font-weight: 600; }
+.recap__done { margin-top: auto; }
