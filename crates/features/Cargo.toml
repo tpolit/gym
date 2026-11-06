@@ -1,0 +1,15 @@
+[package]
+name = "features"
+description = "Use cases de Gym, indépendants de toute technologie d'interface."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[dependencies]
+domain.workspace = true
+persistence.workspace = true
+chrono.workspace = true
+
+[lints]
+workspace = true

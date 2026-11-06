@@ -1,0 +1,50 @@
+[workspace]
+members = [
+    "crates/domain",
+    "crates/persistence",
+    "crates/features",
+    "crates/web_platform",
+    "crates/ui_leptos",
+]
+resolver = "3"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.99"
+publish = false
+
+# Shared versions.
+[workspace.dependencies]
+domain = { path = "crates/domain" }
+persistence = { path = "crates/persistence" }
+features = { path = "crates/features" }
+web_platform = { path = "crates/web_platform" }
+
+# No `clock` anywhere: the time is only read by web_platform::clock (`Utc::now()` panics in wasm).
+chrono = { version = "0.4.45", default-features = false, features = ["std"] }
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+leptos = { version = "0.8.23", features = ["csr"] }
+wasm-bindgen = "0.2.130"
+wasm-bindgen-futures = "0.4.80"
+js-sys = "0.3.107"
+web-sys = "0.3.107"
+console_error_panic_hook = "0.1.7"
+base64 = "0.23.1"
+
+pollster = "1.0.1"
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+
+[workspace.lints.clippy]
+unwrap_used = "deny"
+expect_used = "deny"
+
+# Size of the .wasm downloaded by the iPhone.
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"

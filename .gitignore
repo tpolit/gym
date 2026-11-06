@@ -1,0 +1,11 @@
+/target
+/mockups
+/dist
+
+# Toolchain installed locally by tools/setup.sh (Rust, Trunk, caches)
+/.toolchain/
+
+# Third-party app screenshots (copyrighted): local use only, never publish
+/design/inspiration/captures/
+
+*.md

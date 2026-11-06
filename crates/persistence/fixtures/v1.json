@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "preferences": { "weekly_goal": 4 },
+  "custom_exercises": [
+    {
+      "id": "custom-1",
+      "name": "Rowing machine Technogym",
+      "category": "strength",
+      "muscle_group": "back",
+      "equipment": "machine",
+      "measure": "weight_reps",
+      "archived": false
+    },
+    {
+      "id": "custom-2",
+      "name": "Planche lestée",
+      "category": "strength",
+      "muscle_group": "abs",
+      "equipment": "plate",
+      "measure": "duration",
+      "archived": true
+    }
+  ],
+  "exercise_settings": {
+    "custom-1": "Siège cran 4, poignées hautes",
+    "leg_press": "Dossier cran 2, pieds hauts"
+  },
+  "sessions": [
+    {
+      "id": 42,
+      "name": "Push A",
+      "origin": "planned",
+      "status": "done",
+      "planned_for": "2026-10-28",
+      "started_at": "2026-10-28T18:02:00+01:00",
+      "finished_at": "2026-10-28T19:10:00+01:00",
+      "notes": "Bonne forme",
+      "exercises": [
+        {
+          "entry_id": 1,
+          "exercise_id": "barbell_bench_press",
+          "sets": [
+            { "kind": "weight_reps", "weight_g": 60000, "reps": 10, "warmup": true, "completed_at": "2026-10-28T18:06:00+01:00" },
+            { "kind": "weight_reps", "weight_g": 80000, "reps": 8, "warmup": false, "completed_at": "2026-10-28T18:09:30+01:00" }
+          ]
+        },
+        {
+          "entry_id": 2,
+          "exercise_id": "custom-1",
+          "sets": [
+            { "kind": "weight_reps", "weight_g": 45000, "reps": 12, "warmup": false, "completed_at": null }
+          ]
+        },
+        {
+          "entry_id": 3,
+          "exercise_id": "pull_up",
+          "sets": [
+            { "kind": "reps", "reps": 10, "load_g": null, "warmup": false, "completed_at": "2026-10-28T18:20:00+01:00" },
+            { "kind": "reps", "reps": 6, "load_g": 10000, "warmup": false, "completed_at": "2026-10-28T18:23:00+01:00" }
+          ]
+        },
+        {
+          "entry_id": 4,
+          "exercise_id": "custom-2",
+          "sets": [
+            { "kind": "duration", "duration_s": 60, "load_g": 5000, "warmup": false, "completed_at": "2026-10-28T18:30:00+01:00" }
+          ]
+        },
+        {
+          "entry_id": 5,
+          "exercise_id": "barbell_bench_press",
+          "sets": [
+            { "kind": "weight_reps", "weight_g": 60000, "reps": 15, "warmup": false, "completed_at": "2026-10-28T18:40:00+01:00" }
+          ]
+        },
+        {
+          "entry_id": 6,
+          "exercise_id": "indoor_rower",
+          "sets": [
+            {
+              "kind": "cardio",
+              "duration_s": 1200,
+              "distance_m": 5000,
+              "calories_kcal": null,
+              "level": 6,
+              "incline_permille": null,
+              "warmup": false,
+              "completed_at": "2026-10-28T19:05:00+01:00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "name": "Jambes",
+      "origin": "planned",
+      "status": "planned",
+      "planned_for": "2026-11-03",
+      "started_at": null,
+      "finished_at": null,
+      "notes": null,
+      "exercises": [
+        { "entry_id": 1, "exercise_id": "barbell_back_squat", "sets": [] },
+        { "entry_id": 2, "exercise_id": "leg_press", "sets": [] }
+      ]
+    },
+    {
+      "id": 44,
+      "name": "Cardio",
+      "origin": "adhoc",
+      "status": "in_progress",
+      "planned_for": null,
+      "started_at": "2026-11-01T10:00:00+01:00",
+      "finished_at": null,
+      "notes": null,
+      "exercises": [
+        {
+          "entry_id": 1,
+          "exercise_id": "treadmill_run",
+          "sets": [
+            {
+              "kind": "cardio",
+              "duration_s": 900,
+              "distance_m": null,
+              "calories_kcal": 150,
+              "level": null,
+              "incline_permille": 25,
+              "warmup": true,
+              "completed_at": "2026-11-01T10:16:00+01:00"
+            }
+          ]
+        },
+        { "entry_id": 2, "exercise_id": "plank", "sets": [] }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+[package]
+name = "ui_leptos"
+description = "Présentation Leptos de Gym (remplaçable)."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[dependencies]
+domain.workspace = true
+persistence.workspace = true
+features.workspace = true
+web_platform.workspace = true
+chrono.workspace = true
+leptos.workspace = true
+console_error_panic_hook.workspace = true
+
+[lints]
+workspace = true
