@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>v2 — Exercices de la séance (tiroir ouvert)</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="check" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></symbol>
+  <symbol id="play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></symbol>
+  <symbol id="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="grip" viewBox="0 0 24 24"><path d="M5 9h14M5 15h14"/></symbol>
+  <symbol id="trash" viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></symbol>
+</svg>
+<div class="screen">
+  <div class="statusbar"><span>18:38</span><span class="icons">5G <span class="battery"></span></span></div>
+  <div class="topbar">
+    <span class="icon-btn"><svg class="i"><use href="#down"/></svg></span>
+    <span class="display" style="font-size:18px;color:var(--text-2)">PUSH A · <span style="color:var(--text)">36:40</span></span>
+    <span class="pill accent-outline">Terminer</span>
+  </div>
+  <div class="scrim"></div>
+
+  <div class="sheet" style="height:700px;padding:0 16px">
+    <div class="grabber"></div>
+    <div class="row" style="margin:14px 0 12px">
+      <div class="grow"><div class="h2">Push A</div><div class="small muted">2 exercices sur 5 · 7 séries</div></div>
+      <span class="pill soft"><svg class="i s"><use href="#plus"/></svg>Exercice</span>
+    </div>
+
+    <div class="list">
+      <div class="item">
+        <span class="status done"><svg class="i s"><use href="#check"/></svg></span>
+        <div class="grow"><div class="bold">Développé couché barre</div><div class="small muted">80×8 · 80×7 · 77,5×8</div></div>
+        <svg class="i dim"><use href="#grip"/></svg>
+      </div>
+      <div class="item" style="background:rgba(58,214,255,.07)">
+        <span class="status now"><svg class="i s fill"><use href="#play"/></svg></span>
+        <div class="grow"><div class="bold">Développé incliné haltères</div><div class="small muted">30×10 · 30×9 · <span class="rest">repos 1:24</span></div></div>
+        <svg class="i dim"><use href="#grip"/></svg>
+      </div>
+      <div class="item" style="position:relative;overflow:hidden;padding:0">
+        <div style="position:absolute;right:0;top:0;bottom:0;width:96px;background:var(--danger);display:flex;align-items:center;justify-content:center;color:#fff;flex-direction:column;gap:2px;font-size:12px;font-weight:700"><svg class="i"><use href="#trash"/></svg>Retirer</div>
+        <div class="row" style="background:var(--surface);padding:12px 14px;min-height:64px;width:100%;transform:translateX(-96px)">
+          <span class="status todo"></span>
+          <div class="grow"><div class="bold">Écarté poulie vis-à-vis</div><div class="small muted">Poulies cran 3 · 3 séries prévues</div></div>
+          <svg class="i dim"><use href="#grip"/></svg>
+        </div>
+      </div>
+      <div class="item">
+        <span class="status todo"></span>
+        <div class="grow"><div class="bold">Dips</div><div class="small muted">Dernière fois : 12 · 10 · 9 reps</div></div>
+        <svg class="i dim"><use href="#grip"/></svg>
+      </div>
+      <div class="item">
+        <span class="status todo"></span>
+        <div class="grow"><div class="bold">Gainage planche</div><div class="small muted">Dernière fois : 60 s · 45 s</div></div>
+        <svg class="i dim"><use href="#grip"/></svg>
+      </div>
+    </div>
+
+    <div style="position:absolute;left:16px;right:16px;bottom:34px;display:flex;flex-direction:column;gap:4px">
+      <div class="btn primary">Terminer la séance</div>
+      <div class="btn ghost">Abandonner</div>
+    </div>
+  </div>
+  <div class="home-indicator"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+trunk-version = "^0.22"
+
+[build]
+target = "index.html"
+dist = "dist"
+
+# List of files to cache and service worker cache version,
+# computed from the build content (see tools/sw-precache.sh).
+[[hooks]]
+stage = "post_build"
+command = "sh"
+command_arguments = ["tools/sw-precache.sh"]

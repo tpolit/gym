@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>Sélecteur d'exercices</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+</svg>
+<div class="screen">
+  <div class="statusbar"><span>18:37</span><span class="icons">5G <span class="battery"></span></span></div>
+  <div class="navbar">
+    <span class="back">Annuler</span>
+    <span class="title">Ajouter un exercice</span>
+    <span class="right"></span>
+  </div>
+
+  <div class="content" style="gap:10px">
+    <div class="search"><svg class="i s"><use href="#search"/></svg>Rechercher (nom, alias…)</div>
+    <div class="chips">
+      <span class="chip active">Tous</span><span class="chip">Salle</span><span class="chip">Poids du corps</span><span class="chip">Mobilité</span><span class="chip">Étirements</span>
+    </div>
+
+    <h2 class="section">Récents</h2>
+    <div class="list">
+      <div class="item"><div class="grow"><div class="bold">Développé couché barre</div><div class="muted small">Barre · Pectoraux</div></div><svg class="i" style="color:var(--accent)"><use href="#plus"/></svg></div>
+      <div class="item"><div class="grow"><div class="bold">Tractions</div><div class="muted small">Poids du corps · Dos</div></div><svg class="i" style="color:var(--accent)"><use href="#plus"/></svg></div>
+      <div class="item"><div class="grow"><div class="bold">Squat barre</div><div class="muted small">Barre · Quadriceps</div></div><svg class="i" style="color:var(--accent)"><use href="#plus"/></svg></div>
+    </div>
+
+    <h2 class="section">Pectoraux</h2>
+    <div class="list">
+      <div class="item"><div class="grow"><div class="bold">Écarté poulie vis-à-vis</div><div class="muted small">Poulie · Pectoraux</div></div><svg class="i" style="color:var(--accent)"><use href="#plus"/></svg></div>
+      <div class="item"><div class="grow"><div class="bold">Développé couché haltères</div><div class="muted small">Haltères · Pectoraux</div></div><svg class="i" style="color:var(--accent)"><use href="#plus"/></svg></div>
+      <div class="item"><div class="grow"><div class="bold">Pompes</div><div class="muted small">Poids du corps · Pectoraux</div></div><svg class="i" style="color:var(--accent)"><use href="#plus"/></svg></div>
+      <div class="item"><div class="grow"><div class="bold">Pec deck</div><div class="muted small">Machine · Pectoraux</div></div><svg class="i" style="color:var(--accent)"><use href="#plus"/></svg></div>
+    </div>
+
+    <div style="margin-top:auto;padding-bottom:42px">
+      <div class="btn secondary block"><svg class="i"><use href="#plus"/></svg>Créer un exercice</div>
+    </div>
+  </div>
+  <div class="home-indicator"></div>
+</div>
+</body>
+</html>

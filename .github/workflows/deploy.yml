@@ -1,0 +1,71 @@
+# On every push to `main`: checks, tests, release build, then publication on GitHub Pages.
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One publication at a time; a running one is never cancelled halfway.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # Same locations as tools/env.sh: the toolchain lives inside the repository.
+    env:
+      RUSTUP_HOME: ${{ github.workspace }}/.toolchain/rustup
+      CARGO_HOME: ${{ github.workspace }}/.toolchain/cargo
+      XDG_CACHE_HOME: ${{ github.workspace }}/.toolchain/cache
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Install the toolchain (Rust, wasm target, Trunk)
+        run: |
+          bash tools/setup.sh
+          echo "$CARGO_HOME/bin" >> "$GITHUB_PATH"
+          echo "$GITHUB_WORKSPACE/.toolchain/bin" >> "$GITHUB_PATH"
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          # rustup's proxies live in CARGO_HOME/bin and are reinstalled by setup.sh.
+          cache-bin: "false"
+          cache-directories: .toolchain/cache
+
+      - name: Format
+        run: cargo fmt --all --check
+
+      - name: Clippy (native)
+        run: cargo clippy --workspace --all-targets -- -D warnings
+
+      - name: Clippy (wasm)
+        run: cargo clippy -p web_platform -p ui_leptos --target wasm32-unknown-unknown -- -D warnings
+
+      - name: Tests
+        run: cargo test --workspace
+
+      - name: Release build
+        run: trunk build --release --public-url /gym/
+
+      - uses: actions/configure-pages@v6
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

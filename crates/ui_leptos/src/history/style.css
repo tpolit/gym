@@ -1,0 +1,28 @@
+.history__title { padding-top: var(--space-4); }
+
+.history__row {
+  display: grid; grid-template-columns: 1fr auto; gap: 2px var(--space-3);
+  width: 100%; padding: var(--space-3) var(--space-4);
+  &:active { background: var(--surface-2); }
+}
+.history__name { font-weight: 600; }
+.history__date { font-size: var(--text-sm); color: var(--text-2); text-align: right; }
+.history__summary { grid-column: 1 / -1; font-size: var(--text-sm); }
+
+.history__heading { display: flex; flex-direction: column; gap: var(--space-1); }
+.history__notes { display: flex; flex-direction: column; gap: var(--space-1); }
+
+.history__exercise { display: flex; flex-direction: column; gap: var(--space-2); }
+.history__exercise-header { display: flex; align-items: center; gap: var(--space-2); }
+.history__exercise-name { flex: 1; min-width: 0; font-size: var(--text-md); font-weight: 600; }
+.history__times { align-self: flex-start; min-height: var(--touch-min); color: var(--text-2); text-align: left; }
+.history__edit { margin-left: var(--space-2); color: var(--accent); font-size: var(--text-sm); font-weight: 600; }
+.history__add-set { align-self: flex-start; color: var(--accent); }
+.history__exercise .swipe { border-radius: 0; }
+.history__exercise .swipe__content { background: var(--surface); }
+.history__set { display: grid; grid-template-columns: 34px 1fr auto; align-items: center; gap: var(--space-2); min-height: 48px; padding: 0 var(--space-4); }
+.history__set-number { font-family: var(--font-display); font-weight: 700; font-size: var(--digits-xs); color: var(--text-3); }
+.history__set-value { font-family: var(--font-display); font-weight: 700; font-size: var(--digits-xs); }
+.history__rest { font-size: var(--text-sm); color: var(--rest); }
+
+.history__actions { display: flex; flex-direction: column; gap: var(--space-2); margin-top: var(--space-2); }

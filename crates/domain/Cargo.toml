@@ -1,0 +1,19 @@
+[package]
+name = "domain"
+description = "Noyau métier de Gym : Rust pur, sans dépendance web ni serde."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[dependencies]
+chrono.workspace = true
+
+# Only used to read src/catalog.json at compile time (build.rs):
+# the compiled crate does not depend on serde.
+[build-dependencies]
+serde.workspace = true
+serde_json.workspace = true
+
+[lints]
+workspace = true

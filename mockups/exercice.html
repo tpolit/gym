@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>Vue exercice</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="chev-l" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+  <symbol id="chev-r" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+  <symbol id="timer" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></symbol>
+  <symbol id="check" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></symbol>
+  <symbol id="sliders" viewBox="0 0 24 24"><path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"/><circle cx="15" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="18" r="2"/></symbol>
+</svg>
+<div class="screen">
+  <div class="statusbar"><span>18:36</span><span class="icons">5G <span class="battery"></span></span></div>
+  <div class="navbar">
+    <span class="back"><svg class="i"><use href="#chev-l"/></svg>Séance</span>
+    <span class="title">2 / 5</span>
+    <span class="right">Suivant<svg class="i"><use href="#chev-r"/></svg></span>
+  </div>
+
+  <div class="content" style="gap:10px">
+    <div>
+      <div class="title-l">Développé incliné haltères</div>
+      <div style="display:flex;gap:6px;margin-top:6px"><span class="tag">Haltères</span><span class="tag">Pectoraux</span></div>
+    </div>
+
+    <div class="card row" style="padding:10px 14px">
+      <svg class="i" style="color:var(--text-2)"><use href="#sliders"/></svg>
+      <div class="grow">Banc incliné cran 3</div>
+      <span style="color:var(--accent)" class="small">Modifier</span>
+    </div>
+
+    <div class="rest-banner">
+      <svg class="i"><use href="#timer"/></svg>
+      <span>Repos depuis la série 2</span>
+      <span class="time">1:24</span>
+    </div>
+
+    <div class="card" style="padding:12px 16px">
+      <div class="muted small" style="margin-bottom:8px">Dernière fois · mar. 28 oct.</div>
+      <div class="chips"><span class="chip">30 × 10</span><span class="chip">30 × 9</span><span class="chip">27,5 × 10</span></div>
+    </div>
+
+    <div class="list">
+      <div class="item" style="min-height:44px;padding:10px 16px">
+        <span class="muted" style="width:20px">1</span><span class="grow bold">30 kg × 10</span><span class="muted xsmall">18:31</span>
+      </div>
+      <div class="item" style="min-height:44px;padding:10px 16px">
+        <span class="muted" style="width:20px">2</span><span class="grow bold">30 kg × 9</span><span class="muted xsmall">18:34</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sheet">
+    <div class="steppers">
+      <div class="stepper">
+        <div class="label">Poids (kg)</div>
+        <div class="controls"><div class="pm">−</div><div><span class="value">30,0</span></div><div class="pm">+</div></div>
+        <div class="hint">± 0,5 kg · toucher le nombre pour saisir</div>
+      </div>
+      <div class="stepper" style="flex:.8">
+        <div class="label">Répétitions</div>
+        <div class="controls"><div class="pm">−</div><div class="value">9</div><div class="pm">+</div></div>
+        <div class="hint">± 1</div>
+      </div>
+    </div>
+    <div class="toggle-row"><span>Échauffement</span><span class="toggle"></span></div>
+    <div class="btn primary block"><svg class="i"><use href="#check"/></svg>Valider la série 3</div>
+  </div>
+  <div class="home-indicator"></div>
+</div>
+</body>
+</html>

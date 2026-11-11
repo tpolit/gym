@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>v2 — Fin de séance</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="trophy" viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0zM7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4"/></symbol>
+  <symbol id="check" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></symbol>
+</svg>
+<div class="screen">
+  <svg width="390" height="300" style="position:absolute;top:0;left:0;opacity:.85">
+    <g>
+      <rect x="40" y="70" width="8" height="14" rx="2" fill="#d4ff3a" transform="rotate(25 44 77)"/>
+      <rect x="320" y="90" width="8" height="14" rx="2" fill="#3ad6ff" transform="rotate(-30 324 97)"/>
+      <rect x="90" y="150" width="6" height="12" rx="2" fill="#ffc542" transform="rotate(60 93 156)"/>
+      <rect x="280" y="170" width="6" height="12" rx="2" fill="#d4ff3a" transform="rotate(10 283 176)"/>
+      <circle cx="200" cy="60" r="4" fill="#ffc542"/><circle cx="350" cy="200" r="3" fill="#d4ff3a"/>
+      <circle cx="30" cy="210" r="3" fill="#3ad6ff"/><rect x="160" y="110" width="6" height="10" rx="2" fill="#3ad6ff" transform="rotate(-50 163 115)"/>
+    </g>
+  </svg>
+  <div class="statusbar"><span>19:10</span><span class="icons">5G <span class="battery"></span></span></div>
+  <div class="content" style="gap:16px;padding-top:40px">
+    <div style="text-align:center">
+      <div class="status done" style="width:64px;height:64px;border-radius:32px;margin:0 auto 12px"><svg class="i l"><use href="#check"/></svg></div>
+      <div class="eyebrow">Séance terminée</div>
+      <div class="h1" style="font-size:48px">Push A</div>
+    </div>
+
+    <div class="card" style="display:flex;justify-content:space-around;text-align:center;padding:14px 8px">
+      <div><div class="display" style="font-size:34px">1:08</div><div class="xsmall muted">durée</div></div>
+      <div><div class="display" style="font-size:34px">18</div><div class="xsmall muted">séries</div></div>
+      <div><div class="display" style="font-size:34px">6,2 t</div><div class="xsmall muted">volume</div></div>
+      <div><div class="display rest" style="font-size:34px">1:52</div><div class="xsmall muted">repos moyen</div></div>
+    </div>
+
+    <div>
+      <div class="eyebrow record" style="margin:0 4px 8px">2 records battus</div>
+      <div class="list">
+        <div class="item"><span class="medal"><svg class="i"><use href="#trophy"/></svg></span><div class="grow"><div class="bold">Développé couché barre</div><div class="small muted">1RM estimé</div></div><div style="text-align:right"><div class="display" style="font-size:26px">102 kg</div><div class="xsmall record">+3 kg</div></div></div>
+        <div class="item"><span class="medal"><svg class="i"><use href="#trophy"/></svg></span><div class="grow"><div class="bold">Dips</div><div class="small muted">Répétitions sur une série</div></div><div style="text-align:right"><div class="display" style="font-size:26px">14 reps</div><div class="xsmall record">+2</div></div></div>
+      </div>
+    </div>
+
+    <div class="card row">
+      <svg width="54" height="54" viewBox="0 0 54 54"><g fill="none" stroke-width="7" stroke-linecap="round" transform="rotate(-90 27 27)"><circle cx="27" cy="27" r="22" stroke="#262a14"/><circle cx="27" cy="27" r="22" stroke="#d4ff3a" stroke-dasharray="25 113"/><circle cx="27" cy="27" r="22" stroke="#d4ff3a" stroke-dasharray="25 113" stroke-dashoffset="-34.5"/><circle cx="27" cy="27" r="22" stroke="#d4ff3a" stroke-dasharray="25 113" stroke-dashoffset="-69"/></g></svg>
+      <div class="grow"><div class="bold">3 séances sur 4 cette semaine</div><div class="small muted">Encore une pour tenir ton objectif. Et si la semaine est chargée, ce n'est pas grave.</div></div>
+    </div>
+
+    <div class="btn primary" style="margin-top:auto;margin-bottom:42px">Fermer</div>
+  </div>
+  <div class="home-indicator"></div>
+</div>
+</body>
+</html>

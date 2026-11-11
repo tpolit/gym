@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>Séance en cours</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="chev-l" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+  <symbol id="chev-r" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+  <symbol id="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="timer" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></symbol>
+  <symbol id="check" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></symbol>
+  <symbol id="play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></symbol>
+  <symbol id="sliders" viewBox="0 0 24 24"><path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"/><circle cx="15" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="18" r="2"/></symbol>
+</svg>
+<div class="screen">
+  <div class="statusbar"><span>18:36</span><span class="icons">5G <span class="battery"></span></span></div>
+  <div class="navbar">
+    <span class="back"><svg class="i"><use href="#chev-l"/></svg>Accueil</span>
+    <span class="title">Push A</span>
+    <span class="right mono">34:12</span>
+  </div>
+
+  <div class="content">
+    <div class="rest-banner">
+      <svg class="i"><use href="#timer"/></svg>
+      <span>Repos</span>
+      <span class="xsmall" style="opacity:.8;font-weight:500">depuis la dernière série</span>
+      <span class="time">1:24</span>
+    </div>
+
+    <div class="list">
+      <div class="item">
+        <div class="status-icon done"><svg class="i s"><use href="#check"/></svg></div>
+        <div class="grow"><div class="bold">Développé couché barre</div><div class="muted small">80×8 · 80×7 · 77,5×8</div></div>
+        <svg class="i chev"><use href="#chev-r"/></svg>
+      </div>
+      <div class="item" style="background:rgba(10,132,255,.08)">
+        <div class="status-icon current"><svg class="i s" style="fill:currentColor;stroke:none"><use href="#play"/></svg></div>
+        <div class="grow"><div class="bold">Développé incliné haltères</div><div class="muted small">30×10 · 30×9</div></div>
+        <svg class="i chev"><use href="#chev-r"/></svg>
+      </div>
+      <div class="item">
+        <div class="status-icon todo"></div>
+        <div class="grow"><div class="bold">Écarté poulie vis-à-vis</div><div class="muted small" style="display:flex;gap:4px;align-items:center"><svg class="i s"><use href="#sliders"/></svg>Poulies cran 3</div></div>
+        <svg class="i chev"><use href="#chev-r"/></svg>
+      </div>
+      <div class="item">
+        <div class="status-icon todo"></div>
+        <div class="grow"><div class="bold">Dips</div><div class="muted small">Dernière fois : 12 · 10 · 9 reps</div></div>
+        <svg class="i chev"><use href="#chev-r"/></svg>
+      </div>
+      <div class="item">
+        <div class="status-icon todo"></div>
+        <div class="grow"><div class="bold">Gainage planche</div><div class="muted small">Dernière fois : 60 s · 45 s</div></div>
+        <svg class="i chev"><use href="#chev-r"/></svg>
+      </div>
+    </div>
+
+    <div class="btn secondary block"><svg class="i"><use href="#plus"/></svg>Ajouter un exercice</div>
+
+    <div style="margin-top:auto;padding-bottom:42px;display:flex;flex-direction:column;gap:10px">
+      <div class="btn success block">Terminer la séance</div>
+      <div class="small" style="text-align:center;color:var(--danger)">Abandonner</div>
+    </div>
+  </div>
+  <div class="home-indicator"></div>
+</div>
+</body>
+</html>

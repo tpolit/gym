@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>v2 — Stats d'un exercice</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
+  <symbol id="history" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="stats" viewBox="0 0 24 24"><path d="M3 20h18M6 16v-4M11 16V6M16 16v-7"/></symbol>
+  <symbol id="dumbbell" viewBox="0 0 24 24"><path d="M6.5 6.5v11M3.5 9v6M17.5 6.5v11M20.5 9v6M6.5 12h11"/></symbol>
+  <symbol id="back" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+  <symbol id="trophy" viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0zM7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4"/></symbol>
+  <symbol id="timer" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></symbol>
+  <symbol id="arrow-up" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+</svg>
+<div class="screen">
+  <div class="statusbar"><span>18:41</span><span class="icons">5G <span class="battery"></span></span></div>
+  <div class="topbar"><span class="icon-btn"><svg class="i"><use href="#back"/></svg></span><span></span><span></span></div>
+  <div class="content" style="gap:10px">
+    <div>
+      <div class="eyebrow">Développé couché barre</div>
+      <div class="display" style="font-size:64px;line-height:1">102 <span style="font-size:30px;color:var(--text-2)">kg</span></div>
+      <div class="row" style="gap:6px"><span class="small accent" style="display:flex;align-items:center;gap:2px"><svg class="i s"><use href="#arrow-up"/></svg>+4,1 %</span><span class="small muted">1RM estimé · 3 derniers mois</span></div>
+    </div>
+
+    <div style="position:relative;height:210px;margin:0 -16px">
+      <svg width="390" height="210" viewBox="0 0 390 210" style="display:block">
+        <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffae80" stop-opacity=".28"/><stop offset="1" stop-color="#ffae80" stop-opacity="0"/></linearGradient></defs>
+        <path d="M0 170 L40 160 L80 162 L120 148 L160 140 L200 122 L240 116 L280 92 L320 84 L350 60 L390 70 L390 210 L0 210 Z" fill="url(#g)"/>
+        <polyline points="0,170 40,160 80,162 120,148 160,140 200,122 240,116 280,92 320,84 350,60 390,70" fill="none" stroke="#ffae80" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+        <line x1="240" y1="10" x2="240" y2="200" stroke="#f5f5f7" stroke-opacity=".5" stroke-dasharray="3 4"/>
+        <circle cx="240" cy="116" r="7" fill="#0b0b0c" stroke="#ffae80" stroke-width="3"/>
+        <circle cx="350" cy="60" r="15" fill="#ffae80" fill-opacity=".18"/>
+        <circle cx="350" cy="60" r="8" fill="#ffae80" stroke="#0b0b0c" stroke-width="3"/>
+        <text x="350" y="32" text-anchor="middle" fill="#9a9aa1" font-family="Barlow Condensed, sans-serif" font-weight="600" font-size="13" letter-spacing="1.2">RECORD</text>
+      </svg>
+      <div style="position:absolute;left:176px;top:4px;background:var(--surface-2);border-radius:12px;padding:6px 10px;text-align:center">
+        <div class="display" style="font-size:22px;line-height:1">98 kg</div><div class="xsmall muted">21 oct. · 82,5 × 6</div>
+      </div>
+    </div>
+
+    <div class="chips"><span class="chip">1 M</span><span class="chip on">3 M</span><span class="chip">1 A</span><span class="chip">Tout</span><span style="flex:1"></span><span class="chip">1RM ▾</span></div>
+
+    <div class="list">
+      <div class="item" style="min-height:52px"><span class="grow muted">Meilleur 1RM estimé</span><span class="display record" style="font-size:24px;display:flex;gap:4px;align-items:center"><svg class="i s"><use href="#trophy"/></svg>102 kg</span><span class="xsmall dim" style="width:44px;text-align:right">28 oct.</span></div>
+      <div class="item" style="min-height:52px"><span class="grow muted">Poids max</span><span class="display" style="font-size:24px">85 kg × 6</span><span class="xsmall dim" style="width:44px;text-align:right">12 oct.</span></div>
+      <div class="item" style="min-height:52px"><span class="grow muted">Meilleur volume</span><span class="display" style="font-size:24px">4 280 kg</span><span class="xsmall dim" style="width:44px;text-align:right">21 oct.</span></div>
+    </div>
+  </div>
+
+  <div class="mini">
+    <span class="dot" style="width:10px;height:10px;border-radius:5px;background:var(--accent)"></span>
+    <div class="grow"><div class="bold">Push A</div><div class="xsmall muted">Développé incliné · série 3</div></div>
+    <div style="text-align:right"><div class="eyebrow rest" style="font-size:11px">Repos</div><div class="display rest" style="font-size:28px;line-height:1">1:24</div></div>
+    <div class="progress"></div>
+  </div>
+  <div class="tabbar">
+    <div class="tab"><svg class="i"><use href="#home"/></svg>Accueil</div>
+    <div class="tab"><svg class="i"><use href="#history"/></svg>Historique</div>
+    <div class="tab on"><svg class="i"><use href="#stats"/></svg>Stats</div>
+    <div class="tab"><svg class="i"><use href="#dumbbell"/></svg>Exercices</div>
+  </div>
+  <div class="home-indicator"></div>
+</div>
+</body>
+</html>

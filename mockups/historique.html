@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>Historique</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
+  <symbol id="history" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="stats" viewBox="0 0 24 24"><path d="M3 20h18M6 16v-4M11 16V6M16 16v-7"/></symbol>
+  <symbol id="dumbbell" viewBox="0 0 24 24"><path d="M6.5 6.5v11M3.5 9v6M17.5 6.5v11M20.5 9v6M6.5 12h11"/></symbol>
+  <symbol id="chev-r" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+  <symbol id="chev-d" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="trophy" viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0zM7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4"/></symbol>
+  <symbol id="play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></symbol>
+</svg>
+<div class="screen">
+  <div class="statusbar"><span>18:40</span><span class="icons">5G <span class="battery"></span></span></div>
+
+  <div class="content">
+    <div class="large-title"><h1>Historique</h1></div>
+    <div class="chips"><span class="chip">Tous les exercices <svg class="i s"><use href="#chev-d"/></svg></span></div>
+
+    <h2 class="section">Octobre 2026</h2>
+    <div class="list">
+      <div class="item">
+        <div style="width:44px;text-align:center"><div class="xsmall muted">VEN.</div><div class="bold" style="font-size:20px">31</div></div>
+        <div class="grow"><div class="bold">Pull A</div><div class="muted small">1 h 02 · 6 exercices · 19 séries</div></div>
+        <span class="tag" style="color:var(--rest);display:flex;gap:3px;align-items:center"><svg class="i s"><use href="#trophy"/></svg>2</span>
+        <svg class="i chev"><use href="#chev-r"/></svg>
+      </div>
+      <div class="item">
+        <div style="width:44px;text-align:center"><div class="xsmall muted">MAR.</div><div class="bold" style="font-size:20px">28</div></div>
+        <div class="grow"><div class="bold">Push A</div><div class="muted small">1 h 08 · 6 exercices · 18 séries</div></div>
+        <svg class="i chev"><use href="#chev-r"/></svg>
+      </div>
+      <div class="item">
+        <div style="width:44px;text-align:center"><div class="xsmall muted">DIM.</div><div class="bold" style="font-size:20px">26</div></div>
+        <div class="grow"><div class="bold">Jambes</div><div class="muted small">55 min · 5 exercices · 15 séries</div></div>
+        <span class="tag" style="color:var(--rest);display:flex;gap:3px;align-items:center"><svg class="i s"><use href="#trophy"/></svg>1</span>
+        <svg class="i chev"><use href="#chev-r"/></svg>
+      </div>
+      <div class="item">
+        <div style="width:44px;text-align:center"><div class="xsmall muted">VEN.</div><div class="bold" style="font-size:20px">24</div></div>
+        <div class="grow"><div class="bold">Mobilité &amp; cardio</div><div class="muted small">40 min · 4 exercices · 9 séries</div></div>
+        <svg class="i chev"><use href="#chev-r"/></svg>
+      </div>
+      <div class="item">
+        <div style="width:44px;text-align:center"><div class="xsmall muted">MER.</div><div class="bold" style="font-size:20px">22</div></div>
+        <div class="grow"><div class="bold">Pull B</div><div class="muted small">58 min · 6 exercices · 18 séries</div></div>
+        <svg class="i chev"><use href="#chev-r"/></svg>
+      </div>
+      <div class="item">
+        <div style="width:44px;text-align:center"><div class="xsmall muted">LUN.</div><div class="bold" style="font-size:20px">20</div></div>
+        <div class="grow"><div class="bold">Push B</div><div class="muted small">1 h 05 · 6 exercices · 17 séries</div></div>
+        <svg class="i chev"><use href="#chev-r"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="session-strip">
+    <span class="dot"></span><span class="grow"><span class="bold">Push A</span> <span class="muted">· en cours · 38 min</span></span>
+    <span style="color:var(--accent);font-weight:600">Reprendre</span>
+  </div>
+  <div class="tabbar">
+    <div class="tab"><svg class="i"><use href="#home"/></svg>Accueil</div>
+    <div class="tab active"><svg class="i"><use href="#history"/></svg>Historique</div>
+    <div class="tab"><svg class="i"><use href="#stats"/></svg>Stats</div>
+    <div class="tab"><svg class="i"><use href="#dumbbell"/></svg>Exercices</div>
+  </div>
+  <div class="home-indicator"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>v2 — Accueil</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
+  <symbol id="history" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="stats" viewBox="0 0 24 24"><path d="M3 20h18M6 16v-4M11 16V6M16 16v-7"/></symbol>
+  <symbol id="dumbbell" viewBox="0 0 24 24"><path d="M6.5 6.5v11M3.5 9v6M17.5 6.5v11M20.5 9v6M6.5 12h11"/></symbol>
+  <symbol id="gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></symbol>
+  <symbol id="flame" viewBox="0 0 24 24"><path d="M12 22c4 0 7-3 7-7 0-4-3-6-4-9-1 2-2 3-4 3 0-2 0-4-2-7-1 4-4 6-4 11 0 5 3 9 7 9z"/></symbol>
+  <symbol id="repeat" viewBox="0 0 24 24"><path d="M17 2l4 4-4 4M3 11V9a3 3 0 0 1 3-3h15M7 22l-4-4 4-4M21 13v2a3 3 0 0 1-3 3H3"/></symbol>
+  <symbol id="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+</svg>
+<div class="screen">
+  <div class="statusbar"><span>9:12</span><span class="icons">5G <span class="battery"></span></span></div>
+  <div class="content" style="gap:14px;padding-top:6px">
+    <div class="row" style="justify-content:space-between">
+      <div><div class="eyebrow">Mardi 4 novembre</div><div class="h1">Cette semaine</div></div>
+      <span class="icon-btn"><svg class="i"><use href="#gear"/></svg></span>
+    </div>
+
+    <div class="card row" style="gap:18px">
+      <div class="ring">
+        <svg width="132" height="132" viewBox="0 0 132 132">
+          <g fill="none" stroke-width="14" stroke-linecap="round" transform="rotate(-90 66 66)">
+            <circle cx="66" cy="66" r="56" stroke="#22301f"/>
+            <circle cx="66" cy="66" r="56" stroke="#a9d6a0" stroke-dasharray="72 280" stroke-dashoffset="0"/>
+            <circle cx="66" cy="66" r="56" stroke="#a9d6a0" stroke-dasharray="72 280" stroke-dashoffset="-88"/>
+            <circle cx="66" cy="66" r="56" stroke="#a9d6a0" stroke-dasharray="72 280" stroke-dashoffset="-176"/>
+          </g>
+        </svg>
+        <div class="center"><span class="display" style="font-size:44px;line-height:1">3<span style="color:var(--text-3)">/4</span></span><span class="eyebrow" style="font-size:11px">séances</span></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div><div class="display accent" style="font-size:28px;display:flex;gap:4px;align-items:center"><svg class="i fill" style="width:22px;height:22px"><use href="#flame"/></svg>6 semaines</div><div class="xsmall muted">objectif tenu d'affilée</div></div>
+        <div><div class="display" style="font-size:28px">18,4 t</div><div class="xsmall muted">soulevées · +8 % vs moyenne</div></div>
+      </div>
+    </div>
+
+    <div class="card" style="display:flex;flex-direction:column;gap:12px">
+      <div class="row" style="justify-content:space-between"><span class="eyebrow">Prochaine séance</span><span class="small muted">jeu. 6 nov.</span></div>
+      <div><div class="h2">Jambes</div><div class="small muted">Squat barre, presse, leg curl… · 5 exercices</div></div>
+      <div class="btn primary">Lancer la séance</div>
+    </div>
+
+    <div>
+      <div class="eyebrow" style="margin:0 4px 8px">Refaire une séance</div>
+      <div style="display:flex;gap:10px">
+        <div class="card" style="flex:1;padding:14px"><svg class="i s accent"><use href="#repeat"/></svg><div class="bold" style="margin-top:6px">Pull A</div><div class="xsmall muted">ven. 31 oct.</div></div>
+        <div class="card" style="flex:1;padding:14px"><svg class="i s accent"><use href="#repeat"/></svg><div class="bold" style="margin-top:6px">Push A</div><div class="xsmall muted">mar. 28 oct.</div></div>
+        <div class="card" style="flex:1;padding:14px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;color:var(--text-2)"><svg class="i"><use href="#plus"/></svg><div class="xsmall">Vide</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tabbar">
+    <div class="tab on"><svg class="i"><use href="#home"/></svg>Accueil</div>
+    <div class="tab"><svg class="i"><use href="#history"/></svg>Historique</div>
+    <div class="tab"><svg class="i"><use href="#stats"/></svg>Stats</div>
+    <div class="tab"><svg class="i"><use href="#dumbbell"/></svg>Exercices</div>
+  </div>
+  <div class="home-indicator"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+# Leptos erases the static type of component views (AnyView): far fewer generic
+# instantiations, about 15 % smaller .wasm. Browser build only.
+[target.wasm32-unknown-unknown]
+rustflags = ["--cfg", "erase_components"]
