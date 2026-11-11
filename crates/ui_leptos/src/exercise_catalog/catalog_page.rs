@@ -3,6 +3,7 @@ use leptos::prelude::*;
 
 use crate::navigation::{Navigation, Screen};
 use crate::store::Store;
+use crate::ui::MuscleChips;
 
 #[component]
 pub fn CatalogPage(store: Store, navigation: Navigation) -> impl IntoView {
@@ -55,6 +56,10 @@ pub fn CatalogPage(store: Store, navigation: Navigation) -> impl IntoView {
                 {family_chip(None)}
                 {Family::ALL.into_iter().map(|family| family_chip(Some(family))).collect_view()}
             </div>
+            <MuscleChips
+                selected=Signal::derive(move || filter.with(|filter| filter.muscle_group))
+                on_select=Callback::new(move |group| filter.update(|filter| filter.muscle_group = group))
+            />
             <label class="toggle">
                 <input
                     type="checkbox"

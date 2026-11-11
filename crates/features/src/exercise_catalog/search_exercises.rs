@@ -1,6 +1,7 @@
-use domain::{Category, Db, Equipment, ExerciseId, ExerciseInfo};
+use domain::{Category, Db, Equipment, ExerciseId, ExerciseInfo, MuscleGroup};
 
 use crate::shared::labels::{equipment_label, muscle_group_label};
+use crate::shared::muscle_filter::matches_muscle;
 use crate::shared::search::{matches_search, normalize_for_search};
 use crate::shared::shown_builtin_exercises::shown_builtin_exercises;
 
@@ -50,6 +51,7 @@ impl Family {
 pub struct CatalogFilter {
     pub query: String,
     pub family: Option<Family>,
+    pub muscle_group: Option<MuscleGroup>,
     pub show_archived: bool,
 }
 
@@ -85,6 +87,7 @@ pub fn search_exercises(db: &Db, filter: &CatalogFilter) -> Vec<CatalogItem> {
         .chain(custom)
         .filter(|(_, info, terms, _)| {
             filter.family.is_none_or(|family| family.contains(info))
+                && matches_muscle(filter.muscle_group, info.muscle_group())
                 && matches_search(&filter.query, terms)
         })
         .map(|(id, info, _, is_archived)| CatalogItem {
@@ -134,6 +137,43 @@ mod tests {
             },
         );
         assert!(ids(&bodyweight).contains(&pull_up()));
+    }
+
+    #[test]
+    fn filters_by_main_muscle_group_combined_with_family_and_text() {
+        let mut db = Db::default();
+        let custom = db
+            .add_custom_exercise(custom_info("Tirage Technogym", MeasureKind::WeightReps))
+            .unwrap();
+        let search = |family: Option<Family>, muscle_group: MuscleGroup, query: &str| {
+            search_exercises(
+                &db,
+                &CatalogFilter {
+                    query: query.to_owned(),
+                    family,
+                    muscle_group: Some(muscle_group),
+                    ..CatalogFilter::default()
+                },
+            )
+        };
+
+        let chest = search(None, MuscleGroup::Chest, "");
+        assert!(ids(&chest).contains(&bench()));
+        assert!(
+            chest
+                .iter()
+                .all(|item| item.detail.starts_with("Pectoraux · "))
+        );
+
+        let back = ids(&search(None, MuscleGroup::Back, ""));
+        assert!(back.contains(&pull_up()) && back.contains(&custom));
+        assert!(!back.contains(&bench()));
+
+        let bodyweight_back = ids(&search(Some(Family::Bodyweight), MuscleGroup::Back, ""));
+        assert!(bodyweight_back.contains(&pull_up()) && !bodyweight_back.contains(&custom));
+
+        assert_eq!(ids(&search(None, MuscleGroup::Back, "technogym")), [custom]);
+        assert!(search(None, MuscleGroup::Chest, "technogym").is_empty());
     }
 
     #[test]

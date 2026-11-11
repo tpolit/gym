@@ -1,6 +1,7 @@
 mod confirm_sheet;
 mod exercise_picker;
 mod keypad;
+mod muscle_chips;
 mod reorder_buttons;
 mod set_draft_editor;
 mod swipe_row;
@@ -11,6 +12,7 @@ mod top_bar;
 pub use confirm_sheet::{ConfirmPrompt, ConfirmSheet};
 pub use exercise_picker::ExercisePicker;
 pub use keypad::Keypad;
+pub use muscle_chips::MuscleChips;
 pub use reorder_buttons::ReorderButtons;
 pub use set_draft_editor::SetDraftEditor;
 pub use swipe_row::SwipeRow;

@@ -63,6 +63,7 @@ fn choice(id: ExerciseId, info: &ExerciseInfo, search_terms: Vec<String>) -> Exe
             muscle_group_label(info.muscle_group()),
             equipment_label(info.equipment())
         ),
+        muscle_group: info.muscle_group(),
         search_terms,
     }
 }
@@ -117,6 +118,7 @@ mod tests {
             .find(|choice| choice.id == bench())
             .unwrap();
         assert_eq!(bench_choice.detail, "Pectoraux · Barre");
+        assert_eq!(bench_choice.muscle_group, MuscleGroup::Chest);
         assert!(bench_choice.matches("DC"));
     }
 

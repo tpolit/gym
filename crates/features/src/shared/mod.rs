@@ -6,6 +6,7 @@ pub mod exercise_name;
 pub mod format;
 pub mod keypad;
 pub mod labels;
+pub mod muscle_filter;
 pub mod records;
 pub mod search;
 pub mod session_volume;

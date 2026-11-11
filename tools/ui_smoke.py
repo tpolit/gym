@@ -140,6 +140,17 @@ window.smoke = {
     input.dispatchEvent(new Event('input', { bubbles: true }));
   },
   text() { return document.body.innerText; },
+  chip(text) {
+    const target = [...document.querySelectorAll('.muscle-chips .chip')].find(b => b.textContent.trim() === text);
+    if (!target) throw new Error('Chip not found: ' + text);
+    target.click();
+  },
+  pressedChips() {
+    return [...document.querySelectorAll('.muscle-chips .chip[aria-pressed=true]')].map(c => c.textContent.trim());
+  },
+  muscles() {
+    return [...document.querySelectorAll('.picker__detail')].map(d => d.textContent.split(' · ')[0]);
+  },
 };
 """
 
@@ -220,8 +231,36 @@ def run_scenario(step, shot, devtools):
     step("click('Démarrer')")
     shot("03-seance-vide")
     step("click('Ajouter un exercice')")
+    step("chip('Pectoraux')")
+    shot("04a-selecteur-pectoraux")
+    muscles = devtools.evaluate("smoke.muscles()")
+    assert muscles and set(muscles) == {"Pectoraux"}, muscles
+    assert devtools.evaluate("smoke.pressedChips()") == ["Pectoraux"]
+    step("chip('Dos')")
+    muscles = devtools.evaluate("smoke.muscles()")
+    assert muscles and set(muscles) == {"Dos"}, muscles
+    assert devtools.evaluate("smoke.pressedChips()") == ["Dos"]
+    step("chip('Dos')")
+    assert devtools.evaluate("smoke.pressedChips()") == []
+    muscles = devtools.evaluate("smoke.muscles()")
+    assert len(set(muscles)) == 18, set(muscles)
+    sticky = devtools.evaluate(
+        "(() => { const sheet = document.querySelector('.picker'); sheet.scrollTop = 3000;"
+        " const top = document.querySelector('.picker__top').getBoundingClientRect().top;"
+        " return [sheet.scrollTop > 0, Math.round(top - sheet.getBoundingClientRect().top)]; })()"
+    )
+    shot("04b-selecteur-defile")
+    assert sticky == [True, 0], sticky
+    devtools.evaluate("document.querySelector('.picker').scrollTop = 0")
+    step("chip('Pectoraux')")
     step("type('.picker input', 'developpe couche')")
     shot("04-selecteur")
+    muscles = devtools.evaluate("smoke.muscles()")
+    assert muscles and set(muscles) == {"Pectoraux"}, muscles
+    step("chip('Dos')")
+    text = devtools.evaluate("smoke.text()").lower()
+    assert "aucun exercice trouvé" in text, text
+    step("chip('Pectoraux')")
     step("click('Développé couché barre')")
     step("clickSelector('.stepper__value', 0)")
     for key in ["8", "2", ",", "5"]:
@@ -407,6 +446,17 @@ def run_scenario(step, shot, devtools):
 
     step("click('Exercices')")
     shot("19-catalogue")
+    step("chip('Mollets')")
+    muscles = devtools.evaluate("smoke.muscles()")
+    assert muscles and set(muscles) == {"Mollets"}, muscles
+    step("click('Étirements')")
+    shot("19a-catalogue-mollets-etirements")
+    stretches = devtools.evaluate("smoke.muscles()")
+    assert stretches and set(stretches) == {"Mollets"} and len(stretches) < len(muscles), stretches
+    step("click('Tous')")
+    step("chip('Mollets')")
+    assert devtools.evaluate("smoke.pressedChips()") == []
+    assert len(set(devtools.evaluate("smoke.muscles()"))) == 18
     step("type('main input.input', 'alternate knees to floor')")
     shot("19b-catalogue-mobilite")
     text = devtools.evaluate("smoke.text()").lower()
